@@ -147,29 +147,6 @@ public final class MiscUtil {
 		return value != null ? value : defaultValue;
 	}
 	
-	@SuppressWarnings("unchecked")
-	// FIXME remove libraryClassWhichShouldBeAvailable when modular approach is implemented
-	public static <T> T loadLibraryClass(@Nonnull String libraryClassWhichShouldBeAvailable,
-										 @Nonnull String apiClassToLoad,
-										 @Nonnull String libraryNotFoundMessage,
-										 @Nonnull String otherExceptions) {
-		if (!classAvailable(libraryClassWhichShouldBeAvailable)) {
-			throw new LibraryLoaderException(libraryNotFoundMessage);
-		}
-		
-		try {
-			return (T) Class.forName(apiClassToLoad).newInstance();
-		} catch (Exception | NoClassDefFoundError e) {
-			throw new LibraryLoaderException(otherExceptions, e);
-		}
-	}
-	
-	public static <T> T loadLibraryClass(@Nonnull String apiClassToLoad,
-										 @Nonnull String libraryNotFoundMessage,
-										 @Nonnull String otherExceptions) {
-		return loadLibraryClass(apiClassToLoad, apiClassToLoad, libraryNotFoundMessage, otherExceptions);
-	}
-	
 	public static boolean classAvailable(@Nonnull String className) {
 		try {
 			Class.forName(className);

@@ -6,14 +6,14 @@ import org.simplejavamail.MailException;
 // FIXME move to module package
 public class LibraryLoaderException extends MailException {
 	// FIXME make methods non-public
-	public static final String ERROR_CLI_MODULE_MISSING = "CLI module not found, make sure it is on the classpath (https://github.com/simple-java-mail/cli-module)";
-	public static final String ERROR_LOADING_CLI_MODULE = "Error loading CLI module...";
+	public static final String ERROR_MODULE_MISSING = "%s module not found, make sure it is on the classpath (%s)";
+	public static final String ERROR_LOADING_MODULE = "Error loading %s module...";
 	
-	LibraryLoaderException(String message) {
+	public LibraryLoaderException(String message) {
 		super(message);
 	}
 	
-	LibraryLoaderException(String message, Throwable cause) {
+	public LibraryLoaderException(String message, Throwable cause) {
 		super(message, cause);
 	}
 }
