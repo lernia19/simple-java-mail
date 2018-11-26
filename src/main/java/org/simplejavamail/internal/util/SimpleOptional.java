@@ -2,6 +2,7 @@ package org.simplejavamail.internal.util;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.xml.ws.Provider;
 
 public class SimpleOptional<T> {
 	private final T value;
@@ -16,5 +17,13 @@ public class SimpleOptional<T> {
 	
 	public T orElse(@Nonnull T otherValue) {
 		return value != null ? value : otherValue;
+	}
+	
+	public T orElse(@Nonnull Provider<T> otherValueProvider) {
+		return value != null ? value : otherValueProvider.provide();
+	}
+	
+	public interface Provider<T> {
+		T provide();
 	}
 }
