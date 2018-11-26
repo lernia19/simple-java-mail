@@ -75,6 +75,7 @@ public final class EmailConverter {
 	 * @param msgData The content of an Outlook (.msg) message from which to create the {@link Email}.
 	 */
 	public static Email outlookMsgToEmail(@Nonnull final String msgData) {
+		// FIXME use module loader instead
 		return MiscUtil.<IOutlookEmailConverter>loadLibraryClass(
 				"org.simplejavamail.outlookmessageparser.OutlookMessageParser",
 				"org.simplejavamail.converter.internal.outlook.OutlookEmailConverter",

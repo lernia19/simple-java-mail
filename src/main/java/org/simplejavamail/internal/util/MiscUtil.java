@@ -146,8 +146,9 @@ public final class MiscUtil {
 	public static <T> T defaultTo(@Nullable final T value, @Nullable final T defaultValue) {
 		return value != null ? value : defaultValue;
 	}
-
+	
 	@SuppressWarnings("unchecked")
+	// FIXME remove libraryClassWhichShouldBeAvailable when modular approach is implemented
 	public static <T> T loadLibraryClass(@Nonnull String libraryClassWhichShouldBeAvailable,
 										 @Nonnull String apiClassToLoad,
 										 @Nonnull String libraryNotFoundMessage,
@@ -161,6 +162,12 @@ public final class MiscUtil {
 		} catch (Exception | NoClassDefFoundError e) {
 			throw new LibraryLoaderException(otherExceptions, e);
 		}
+	}
+	
+	public static <T> T loadLibraryClass(@Nonnull String apiClassToLoad,
+										 @Nonnull String libraryNotFoundMessage,
+										 @Nonnull String otherExceptions) {
+		return loadLibraryClass(apiClassToLoad, apiClassToLoad, libraryNotFoundMessage, otherExceptions);
 	}
 	
 	public static boolean classAvailable(@Nonnull String className) {
