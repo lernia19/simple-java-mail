@@ -10,4 +10,5 @@ public interface CliModule {
 	
 	void runCLI(String[] args);
 	
+	void listUsageForAllSupportedOptions();
 }

@@ -2,8 +2,8 @@ package org.simplejavamail.email;
 
 import org.simplejavamail.converter.EmailConverter;
 import org.simplejavamail.converter.internal.mimemessage.MimeMessageParser;
-import org.simplejavamail.internal.clisupport.annotation.Cli;
-import org.simplejavamail.internal.clisupport.model.CliBuilderApiType;
+import org.simplejavamail.internal.module.clisupport.annotation.Cli;
+import org.simplejavamail.internal.module.clisupport.model.CliBuilderApiType;
 
 import javax.annotation.Nonnull;
 import javax.mail.MessagingException;

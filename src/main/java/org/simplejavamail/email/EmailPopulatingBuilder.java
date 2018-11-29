@@ -1,8 +1,8 @@
 package org.simplejavamail.email;
 
 import org.simplejavamail.email.EmailBuilder.EmailBuilderInstance;
-import org.simplejavamail.internal.clisupport.annotation.Cli;
-import org.simplejavamail.internal.clisupport.model.CliBuilderApiType;
+import org.simplejavamail.internal.module.clisupport.annotation.Cli;
+import org.simplejavamail.internal.module.clisupport.model.CliBuilderApiType;
 import org.simplejavamail.internal.util.MiscUtil;
 
 import javax.activation.DataSource;
