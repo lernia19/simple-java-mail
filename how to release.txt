@@ -1,3 +1,5 @@
+JONAS WAS HERE
+
 Prerequisite:
 
 You need GPG installed (comes along with GIT installation in the \bin folder) and you need to create a keyring, used for signing artifacts.
